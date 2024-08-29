@@ -3,16 +3,8 @@ require('dotenv').config();
 const app = express()
 const port = process.env.PORT || 8888;
 const hostname = process.env.HOST_NAME
-//test connection
-const mysql = require('mysql2')
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  port: 3307,
-  user: 'root',
-  password: '123456',
-  database: 'hoidanit'
-})
+const connection = require('./config/database')
 
 // simple test query
 
