@@ -1,6 +1,6 @@
+const connection = require('../config/database')
 
-const getHomepage = (req, res) => {
-    
+const getHomepage = (req, res) => {  
     return res.render('homepage.ejs')
 }
 
@@ -9,8 +9,21 @@ const getABC = (req, res) => {
 }
 
 const postCreateUser = (req, res) => {
-    console.log("check " , req.body)
-    res.send("craeteraasdasda sda")
+    let email = req.body.email;
+    let myname = req.body.myname;
+    let city = req.body.city;
+
+    connection.query(
+       `INSERT INTO
+            Users (email, name, city)
+                VALUES (?, ?, ?)`,
+        [email, myname, city],
+        function(err, results) {
+        console.log(results);
+            res.send('thanh cong')
+    }
+)
+   
 }
 
 module.exports = {
