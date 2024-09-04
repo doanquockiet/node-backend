@@ -20,13 +20,17 @@ const postCreateUser = (req, res) => {
         [email, myname, city],
         function(err, results) {
         console.log(results);
-            res.send('thanh cong')
+            res.send('Create user successed')
     }
 )
    
 }
 
+const  getCreatePage = (req, res) => {
+    res.render('createuser.ejs')
+}
+
 module.exports = {
-    getHomepage,postCreateUser,
+    getHomepage,postCreateUser,getCreatePage,
     getABC
 }
