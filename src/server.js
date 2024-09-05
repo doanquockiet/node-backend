@@ -18,10 +18,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', webRouter);
 
 // Simple test query
-connection.query('SELECT * FROM Users u', function (err, result, fields) {
-  // console.log('check result = ', result);
-  // console.log('fields =>>>>>', fields);
-});
+// connection.query('SELECT * FROM Users u', function (err, result, fields) {
+//   // console.log('check result = ', result);
+//   // console.log('fields =>>>>>', fields);
+// });
 
 // Start the server
 app.listen(port, hostname, () => {

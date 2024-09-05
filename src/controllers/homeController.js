@@ -8,22 +8,22 @@ const getABC = (req, res) => {
     res.render('example.ejs')
 }
 
-const postCreateUser = (req, res) => {
+const postCreateUser = async (req, res) => {
     let email = req.body.email;
     let myname = req.body.myname;
     let city = req.body.city;
 
-    connection.query(
-       `INSERT INTO
-            Users (email, name, city)
-                VALUES (?, ?, ?)`,
-        [email, myname, city],
-        function(err, results) {
-        console.log(results);
-            res.send('Create user successed')
-    }
+    let [results, fields] = await connection.query(
+        `INSERT INTO
+             Users (email, name, city)
+                 VALUES (?, ?, ?)`,
+         [email, myname, city],
 )
    
+// const [results, fields] = await connection.query('SELECT * FROM Users u') ;
+console.log('check result', results);
+
+
 }
 
 const  getCreatePage = (req, res) => {
