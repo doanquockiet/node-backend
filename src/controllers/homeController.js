@@ -31,7 +31,12 @@ const  getCreatePage = (req, res) => {
     res.render('createuser.ejs')
 }
 
+const  getUpdatePage = (req, res) => {
+    const userID = req.params.id;
+    res.render('edituser.ejs')
+
+}
 module.exports = {
     getHomepage,postCreateUser,getCreatePage,
-    getABC
+    getABC,getUpdatePage
 }
