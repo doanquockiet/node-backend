@@ -1,6 +1,5 @@
+<!DOCTYPE html>
 <html lang="en">
-
-</html>
 
 <head>
     <meta charset="UTF-8">
@@ -11,28 +10,32 @@
 
 <body>
     <div class="topnav">
-        <a href="">Home</a>
+        <a href="/">Home</a>
         <a href="/create">Create User</a>
     </div>
     <div class="form-add-new">
-        <form action="/create-user" method="POST">
+        <form action="/update-user" method="POST">
             <fieldset>
                 <legend>Update a user</legend>
-
+                <div class="d-none">
+                    <label>ID: </label>
+                    <input type="text" value="<%= userEdit.id %>" name="userID">
+                </div>
                 <div class="input-group">
                     <label>Email: </label>
-                    <input type="text" value="<%= userEdit.email%>" name="email">
+                    <input type="text" value="<%= userEdit.email %>" name="email">
                 </div>
                 <div class="input-group">
                     <label>Name: </label>
-                    <input type="text" name="myname" value="<%= userEdit.name%>">
+                    <input type="text" name="myname" value="<%= userEdit.name %>">
                 </div>
                 <div class="input-group">
                     <label>City: </label>
-                    <input type="text" name="city" value="<%= userEdit.city%>">
+                    <input type="text" name="city" value="<%= userEdit.city %>">
                 </div>
+
                 <div>
-                    <button>Lưu</button>
+                    <button type="submit">Lưu</button>
                 </div>
             </fieldset>
         </form>
